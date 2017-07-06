@@ -6,7 +6,7 @@
     "version": "0.1",
 
     "permissions": [
-        "webRequest", "webRequestBlocking"
+        "webRequest", "webRequestBlocking", "https://*.photobucket.com/*"
     ],
 
     "background": {
