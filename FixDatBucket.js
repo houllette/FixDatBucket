@@ -1,14 +1,17 @@
 chrome.webRequest.onBeforeSendHeaders.addEventListener(function(details) {
+    console.log("starting");
+    console.log("working with: "+details.url);
     var newRef = details.url+".html";
-    var gotRef = false;
+    var isRef = false;
     for (var n in details.requestHeaders) {
-        gotRef = details.requestHeaders[n].name.toLowerCase()=="referer";
-        if (gotRef) {
+        isRef = details.requestHeaders[n].name.toLowerCase()=="referer";
+        if (isRef) {
+            console.log("assigning ref "+newRef);
             details.requestHeaders[n].value = newRef;
             break;
         }
     }
-    if (!gotRef) {
+    if (!isRef) {
         details.requestHeaders.push({name:"Referer",value:newRef});
     }
     return {
