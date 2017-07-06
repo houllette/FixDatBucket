@@ -1,0 +1,15 @@
+{
+    "manifest_version": 2,
+
+    "name": "FixDatBucket",
+    "description": "Manipulates HTTP Headers to bypass Photobucket's rule on 3rd-party hosting",
+    "version": "0.1",
+
+    "permissions": [
+        "webRequest", "webRequestBlocking"
+    ],
+
+    "background": {
+        "scripts": ["FixDatBucket.js"]
+    }
+}
